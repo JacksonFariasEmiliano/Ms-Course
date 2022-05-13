@@ -21,8 +21,8 @@ import java.util.List;
 @RequestMapping(value = "/workers")
 public class WorkerResource {
 
-//    @Value("${test.config}")
-//    private String testConfig;
+    @Value("${test.config}")
+    private String testConfig;
 
     @Autowired
     private Environment env;
@@ -30,11 +30,11 @@ public class WorkerResource {
     @Autowired
     private WorkerRepository repository;
 
-//    @GetMapping(value = "/configs")
-//    public ResponseEntity<Void> getConfigs() {
-//        log.info("CONFIG = " + testConfig);
-//        return ResponseEntity.noContent().build();
-//    }
+    @GetMapping(value = "/configs")
+    public ResponseEntity<Void> getConfigs() {
+        log.info("CONFIG = " + testConfig);
+        return ResponseEntity.noContent().build();
+    }
 
     @GetMapping
     public ResponseEntity<List<Worker>> findAll(){
